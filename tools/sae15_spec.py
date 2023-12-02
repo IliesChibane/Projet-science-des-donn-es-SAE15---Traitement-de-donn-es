@@ -60,7 +60,12 @@ def stationStatistics(stations_df_key) :
 # fonction qui exporte au format HTML le DataFrame des mesures statistiques
 def exportStatistics(stats_df, filename) :
 
-  # votre code...
+  html = stats_df.to_html() 
+    
+  # write html to file 
+  text_file = open(filename, "w") 
+  text_file.write(html) 
+  text_file.close() 
 
   return
 
