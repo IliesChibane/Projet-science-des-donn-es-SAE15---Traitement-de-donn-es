@@ -73,28 +73,28 @@ def exportStatistics(stats_df, filename) :
 # fonction qui affiche et exporte la carte des stations Vélibs géolocalisées
 def exportCityMap(geo_stations, marker_size, marker_color, title, date=None, filename=None) :
   # figure et axes
-  # votre code...
+  f, axes = plt.subplots(1, figsize=(15,15))
 
   # conversion des coordonnées dans le système approprié
-  # votre code...
+  geo_data_with_map = geo_stations.to_crs(epsg=3857)
   
   # affichage en fonction des variables passées en argument
-  # votre code...
+  geo_data_with_map.plot(marker_size, markersize=3*marker_size, cmap=marker_color, ax=axes)
 
   # effacement des axes gradués
-  # votre code...
+  axes.set_axis_off()
 
   # ajout du fond de carte correspondant aux coordonnées géographiques des stations
-  # votre code...
+  ctx.add_basemap(axes)
 
   # affichage du titre avec la date de mise à jour
-  # votre code...
+  plt.title(title + " dernière mise à jour " + str(date))
 
   # sauvegarde de la carte sur le Drive
-  # votre code...
+  plt.savefig(filename)
   
   # affichage forçé
-  # votre code...
+  plt.show()
 
-  return 
+  return
 
