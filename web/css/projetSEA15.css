@@ -1,7 +1,129 @@
-/*******************************************/
-/* Feuille de styles pour projetSAE15.html */
-/*******************************************/
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Light background color */
+}
 
-/* définition des styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 40px; /* Increased padding for a more substantial header */
+    margin-bottom: 40px; /* Add margin at the bottom to create space */
+}
 
+h1 {
+    margin: 0;
+    font-size: 3em; /* Larger font size for a more prominent heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for a subtle effect */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in and slide-up animation */
+}
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: center; /* Center its children horizontally */
+    padding: 20px;
+}
+
+.statistics,
+.image {
+    width: 100%; /* Take up full width on small screens */
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    margin-bottom: 20px; /* Add space between statistics and image on small screens */
+    animation: fadeInUp 1s ease-in-out; /* Fade-in and slide-up animation */
+}
+
+.statistics {
+    flex: 0.6; /* 60% width */
+    margin-right: 10px; /* Add some spacing between the statistics and the image */
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center; /* Center the text in table headers and data cells */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.image {
+    flex: 0.4; /* 40% width */
+}
+
+.statistics iframe {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(1.5);
+    transform-origin: 0 0;
+    overflow: auto;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s;
+    cursor: zoom-in;
+}
+
+input[type=checkbox]:checked ~ label > img {
+    transform: scale(2);
+    cursor: zoom-out;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+.image:hover {
+    transform: scale(1.2); /* Augmentez la valeur de l'échelle pour zoomer davantage */
+}
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px; /* Increased padding for a more substantial footer */
+    margin-top: auto; /* Push the footer to the bottom of the page */
+    border-top: 2px solid #fff; /* Border at the top for separation */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#footer p {
+    margin: 0;
+    font-size: 0.8em; /* Smaller font size for a cleaner look */
+}
+
+/* Add hover effects for a more interactive feel */
+.statistics:hover,
+.image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}

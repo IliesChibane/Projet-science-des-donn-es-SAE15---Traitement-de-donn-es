@@ -1,20 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/projetSEA15.css">
+    <title>Your Data Science Project</title>
+</head>
 
-	<!-- L'entête du document -->
-	<head>
-	  <meta charset="utf-8">
-	  <title>Titre de la page</title>
-	  <!-- Lien vers la feuille de styles -->
-	  <link rel="stylesheet" href="css/projetSAE15.css">
-	</head>
-	
-	<!-- Le contenu de la page web -->
-	<body>
+<body>
+    <header>
+        <h1>Projet Science des données : SEA15</h1>
+    </header>
 
-		<!-- Publication des résultats de l'analyse des données Vélib -->
-	  
-	</body>
-	
+    <div class="content">
+        <div class="statistics">
+            <iframe src="data/stats.html" width="100%" height="400px"></iframe>
+        </div>
+
+        <div class="image">
+			<input type="checkbox" id="zoomCheck">
+  			<label for="zoomCheck">
+            	<img src="data/geo_viz.png" alt="Data Science Image">
+			</label>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2023 CHIBANE Ilies (UPEC). All rights reserved.</p>
+	</div>
+</body>
+
 </html>
